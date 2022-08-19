@@ -38,7 +38,7 @@ jobs:
           file: docker/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: shlbweiss/landisiicontainer
+          tags: shlbweiss/landisiicontainer_vice
       - 
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
