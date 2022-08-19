@@ -65,14 +65,23 @@ RUN wget https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-Commun
     cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Community-2.0/deploy/installer; dotnet /opt/Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Output Biomass Community 2.0.txt" && \
     cp /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Community-2.0/src/obj/Release/netstandard2.0/Landis.Extension.Output.BiomassCommunity-v2.dll /opt/Core-Model-v7-LINUX-7/build/extensions/.
 
-# Output Biomass Reclass (WORKS)
-RUN wget https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-Reclass/archive/v3.0.zip && \
-    unzip v3.0.zip -d /opt/Core-Model-v7-LINUX-7/build/extensions/ && \
-    rm v3.0.zip && \
-    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Reclass-3.0/src; sed -i -e 's/lib\\Landis.Library/..\\..\\Support-Library-Dlls-v7-master\\Landis.Library/g' output-biomass.csproj && \
-    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Reclass-3.0/src; dotnet build -c Release output-biomass.csproj && \
-    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Reclass-3.0/deploy/installer; dotnet /opt/Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Output Biomass Reclass 3.1.1.txt" && \
-    cp /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Reclass-3.0/src/obj/Release/netstandard2.0/Landis.Extension.Output.BiomassReclass-v3.dll /opt/Core-Model-v7-LINUX-7/build/extensions/.
+## Output Biomass Reclass (WORKS)
+#RUN wget https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-Reclass/archive/v3.0.zip && \
+#    unzip v3.0.zip -d /opt/Core-Model-v7-LINUX-7/build/extensions/ && \
+#    rm v3.0.zip && \
+#    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Reclass-3.0/src; sed -i -e 's/lib\\Landis.Library/..\\..\\Support-Library-Dlls-v7-master\\Landis.Library/g' output-biomass.csproj && \
+#    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Reclass-3.0/src; dotnet build -c Release output-biomass.csproj && \
+#    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Reclass-3.0/deploy/installer; dotnet /opt/Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Output Biomass Reclass 3.0.txt" && \
+#    cp /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Reclass-3.0/src/obj/Release/netstandard2.0/Landis.Extension.Output.BiomassReclass-v3.dll /opt/Core-Model-v7-LINUX-7/build/extensions/.
+
+# Output Biomass Reclass (from mslucash repo, WORKS)
+RUN wget https://github.com/mslucash/Extension-Reclass/archive/master.zip && \
+    unzip master.zip -d /opt/Core-Model-v7-LINUX-7/build/extensions/ && \
+    rm master.zip && \
+    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Reclass-main/src; sed -i -e 's/lib\\Landis.Library/..\\..\\Support-Library-Dlls-v7-master\\Landis.Library/g' output-biomass.csproj && \
+    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Reclass-main/src; dotnet build -c Release output-biomass.csproj && \
+    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Reclass-main/deploy/installer; dotnet /opt/Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Output Biomass Reclass 3.1.1.txt" && \
+    cp /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Reclass-main/src/obj/Release/netstandard2.0/Landis.Extension.Output.BiomassReclass-v3.dll /opt/Core-Model-v7-LINUX-7/build/extensions/.
 
 # GIPL (WORKS)
 RUN wget https://github.com/LANDIS-II-Foundation/Library-GIPL/archive/master.zip && \
