@@ -57,13 +57,22 @@ RUN wget https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass/archiv
     cp /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-3.0/src/obj/Release/netstandard2.0/Landis.Extension.Output.Biomass-v3.dll /opt/Core-Model-v7-LINUX-7/build/extensions/.
 
 # Output Biomass Community (WORKS)
-RUN wget https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-Community/archive/v2.0.zip && \
-    unzip v2.0.zip -d /opt/Core-Model-v7-LINUX-7/build/extensions/ && \
-    rm v2.0.zip && \
-    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Community-2.0/src; sed -i -e 's/lib\\Landis.Library/..\\..\\Support-Library-Dlls-v7-master\\Landis.Library/g' output-biomass-community.csproj && \
-    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Community-2.0/src; dotnet build -c Release output-biomass-community.csproj && \
-    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Community-2.0/deploy/installer; dotnet /opt/Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Output Biomass Community 2.0.txt" && \
-    cp /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Community-2.0/src/obj/Release/netstandard2.0/Landis.Extension.Output.BiomassCommunity-v2.dll /opt/Core-Model-v7-LINUX-7/build/extensions/.
+#RUN wget https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-Community/archive/v2.0.zip && \
+#    unzip v2.0.zip -d /opt/Core-Model-v7-LINUX-7/build/extensions/ && \
+#    rm v2.0.zip && \
+#    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Community-2.0/src; sed -i -e 's/lib\\Landis.Library/..\\..\\Support-Library-Dlls-v7-master\\Landis.Library/g' output-biomass-community.csproj && \
+#    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Community-2.0/src; dotnet build -c Release output-biomass-community.csproj && \
+#    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Community-2.0/deploy/installer; dotnet /opt/Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Output Biomass Community 2.0.txt" && \
+#    cp /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-Output-Biomass-Community-2.0/src/obj/Release/netstandard2.0/Landis.Extension.Output.BiomassCommunity-v2.dll /opt/Core-Model-v7-LINUX-7/build/extensions/.
+
+# Output Biomass Community- Melissa's version with maps and text files turned off. 
+RUN wget https://github.com/mslucash/Output-Biomass-Community/archive/master.zip && \
+    unzip master.0.zip -d /opt/Core-Model-v7-LINUX-7/build/extensions/ && \
+    rm master.0.zip && \
+    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Output-Biomass-Community-main/src; sed -i -e 's/lib\\Landis.Library/..\\..\\Support-Library-Dlls-v7-master\\Landis.Library/g' output-biomass-community.csproj && \
+    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Output-Biomass-Community-main/src; dotnet build -c Release output-biomass-community.csproj && \
+    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Output-Biomass-Community-main/deploy/installer; dotnet /opt/Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Output Biomass Community 2.0.3.txt" && \
+    cp /opt/Core-Model-v7-LINUX-7/build/extensions/Output-Biomass-Community-main/src/obj/Release/netstandard2.0/Landis.Extension.Output.BiomassCommunity-v2.dll /opt/Core-Model-v7-LINUX-7/build/extensions/.
 
 ## Output Biomass Reclass (WORKS)
 #RUN wget https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass-Reclass/archive/v3.0.zip && \
