@@ -108,7 +108,7 @@ RUN wget https://github.com/LANDIS-II-Foundation/Extension-DGS-Succession/archiv
     mv /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-DGS-Succession-master/ /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-DGS-Succession/ && \
     cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-DGS-Succession/src; sed -i -e 's/lib\\Landis.Library/..\\..\\Support-Library-Dlls-v7-master\\Landis.Library/g' DGS-succession.csproj && \
     cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-DGS-Succession/src; dotnet build -c Release DGS-succession.csproj && \
-    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-DGS-Succession/deploy/installer; dotnet /opt/Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "DGS_Succession 1.101.txt" && \
+    cd /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-DGS-Succession/deploy/installer; dotnet /opt/Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "DGS_Succession 1.102.txt" && \
     cp /opt/Core-Model-v7-LINUX-7/build/extensions/Extension-DGS-Succession/src/bin/Debug/netstandard2.0/Landis.Extension.Succession.DGS.dll /opt/Core-Model-v7-LINUX-7/build/extensions/. 
 
 # NECN (WORKS)
