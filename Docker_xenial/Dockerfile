@@ -67,8 +67,8 @@ RUN wget https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass/archiv
 
 # Output Biomass Community- Melissa's version with maps and text files turned off. 
 RUN wget https://github.com/mslucash/Output-Biomass-Community/archive/master.zip && \
-    unzip master.0.zip -d /opt/Core-Model-v7-LINUX-7/build/extensions/ && \
-    rm master.0.zip && \
+    unzip master.zip -d /opt/Core-Model-v7-LINUX-7/build/extensions/ && \
+    rm master.zip && \
     cd /opt/Core-Model-v7-LINUX-7/build/extensions/Output-Biomass-Community-main/src; sed -i -e 's/lib\\Landis.Library/..\\..\\Support-Library-Dlls-v7-master\\Landis.Library/g' output-biomass-community.csproj && \
     cd /opt/Core-Model-v7-LINUX-7/build/extensions/Output-Biomass-Community-main/src; dotnet build -c Release output-biomass-community.csproj && \
     cd /opt/Core-Model-v7-LINUX-7/build/extensions/Output-Biomass-Community-main/deploy/installer; dotnet /opt/Core-Model-v7-LINUX-7/build/Release/Landis.Extensions.dll add "Output Biomass Community 2.0.3.txt" && \
