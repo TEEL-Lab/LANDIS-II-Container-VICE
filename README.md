@@ -7,4 +7,4 @@ Extensions supported:
 * **Output Biomass** (https://github.com/LANDIS-II-Foundation/Extension-Output-Biomass/)
 * **Output Biomass Community** (https://github.com/mslucash/Output-Biomass-Community/)
     * *NOTE: this version has output maps and output text files turned off to conserve disk space* 
-* **Output Biomass Reclass** (https://github.com/mslucash/Extension-Reclass/)* DGS Succession
+* **Output Biomass Reclass** (https://github.com/mslucash/Extension-Reclass/)
